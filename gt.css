@@ -1,0 +1,180 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY AVEC DRAPEAU EN ARRIÈRE-PLAN FLOUTÉ */
+body {
+    position: relative;
+    background: none;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* IMAGE DE FOND FLOUTÉE */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("burkina.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* HEADER & NAV */
+header {
+    background-color: rgba(13, 110, 253, 0.9);
+    padding: 15px 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* SECTIONS */
+section {
+    padding: 40px 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+/* TITLES */
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0d6efd;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #222;
+    border-left: 5px solid #0d6efd;
+    padding-left: 10px;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+/* GRID */
+#nos-destinations ul,
+#type-voitures ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+/* CARD */
+#nos-destinations li,
+#type-voitures li {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+#nos-destinations li:hover,
+#type-voitures li:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGES */
+img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* FORM */
+form {
+    background: white;
+    padding: 25px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #0b5ed7;
+}
+
+/* ABOUT */
+#a-propos {
+    max-width: 800px;
+    margin: auto;
+}
+
+#a-propos ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgba(13, 110, 253, 0.9);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        width: 90%;
+    }
+}
